@@ -1,3 +1,4 @@
 #!/bin/bash
-echo "Today day is  $(date) +A%"
+DAY=$(date +%A)
+echo "$DAY"
 
