@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "date +F%"
+echo "Today date is  $date +F%"
