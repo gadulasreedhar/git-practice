@@ -2,7 +2,7 @@
 echo "All variables passed to the script $@"
 echo "Number of varibles passed $#"
 echo "script name $0"
-ECHO "Current working directory $PWD"
+echo "Current working directory $PWD"
 echo "directory of current user $HOME"
 echo "pid of script executing now $$"
 sleep 100 &
