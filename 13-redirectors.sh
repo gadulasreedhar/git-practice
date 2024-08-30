@@ -6,7 +6,7 @@ USERID=$(id -u)
 # N="\e[0m
 
 
-CHKROOT{
+CHKROOT(){
     if [ $USERID -ne 0 ]
     then
         echo "Please run this script with root privilages"
