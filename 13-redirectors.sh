@@ -3,7 +3,7 @@ USERID=$(id -u)
 
 R="\e[31m"
 G="\e[32m"
-N="\e[0m
+N="\e[0m"
 
 
 CHKROOT(){
@@ -37,15 +37,4 @@ then
     VALIDATE $? "Installing GIT"
 else
     echo "GIT already installed nothing to do"
-fi
-
-dnf list installed mysql
-
-if [ $? -ne 0 ]
-then 
-    echo "mysql is not installed going to install it.."
-    dnf install git -y
-    VALIDATE $? "Installing mysql"
-else
-    echo "mysql already installed nothing to do"
 fi
