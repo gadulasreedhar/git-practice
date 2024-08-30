@@ -14,7 +14,14 @@ dnf list installed git
 if [ $? -ne 0 ]
 then
     echo "Git is not installed goint to install it.."
-    dnf install git -y
+    dnf install gitt -y
+    if [ $? -ne 0 ]
+    then
+        echo "Git installation is not successfull.check it"
+        exit 1
+    else
+        echo "Git installation is successfull"
+    fi
 else
     echo "Git already installed nothing to do"
 fi
