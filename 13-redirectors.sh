@@ -1,24 +1,32 @@
 #!/bin/bash
 USERID=$(id -u)
 
+R="\e[32m"
+G="\e[33m"
+N="\e[0m
 
-if [ $USERID -ne 0 ]
-then
-    echo "Please run this script with root privilages"
-    exit 1
-else
-    echo "Used id is: $USERID"
+
+CHKROOT{
+    if [ $USERID -ne 0 ]
+    then
+        echo "Please run this script with root privilages"
+        exit 1
+    else
+        echo "Used id is: $USERID"
 fi
+}
 
 VALIDATE(){
 if [ $1 -ne 0 ] 
 then 
-    echo "$2 is ...FAILED"
+    echo -e "$2 is ...$R FAILED $N"
     exit 1
 else
-    echo "$2 is ...SUCCESS"
+    echo -e "$2 is ... $G SUCCESS $N"
 fi
 }
+
+CHKROOT
 
 dnf list installed git
 
