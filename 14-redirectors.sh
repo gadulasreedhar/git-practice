@@ -35,6 +35,9 @@ USAGE(){
     echo -e "$R USAGE $N :: sudo sh 14-redirectors.sh package1 package2 ..."
     exit 1
 }
+
+echo "Scipt started executed at:$(date)"
+
 CHKROOT
 
 if [ $# -eq 0 ]
