@@ -36,7 +36,7 @@ USAGE(){
     exit 1
 }
 
-echo "Scipt started executed at:$(date)" &>>$LOG_FILES
+echo "Scipt started executed at:$(date)" &>>$LOG_FILE
 
 CHKROOT
 
