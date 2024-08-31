@@ -28,7 +28,7 @@ fi
 
 CHKROOT
 
-for package in $@
+for package in {$@}
 do
 # dnf list installed $package
 # if [ $? -ne 0 ]
@@ -38,5 +38,5 @@ do
 #     VALIDATE $? "Installing $package"
 # else
 #     echo "$package already installed nothing to do"
-echo $package
+echo "$package"
 done
