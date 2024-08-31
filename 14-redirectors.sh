@@ -51,6 +51,6 @@ then
     dnf install $package -y &>>$LOG_FILE
     VALIDATE $? "Installing $package"
 else
-    echo -e "$package already $Y installed nothing to do $N"
+    echo -e "$package already $Y installed nothing to do $N" &>> $LOG_FILE
 fi
 done
