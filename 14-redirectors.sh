@@ -18,8 +18,8 @@ CHKROOT(){
     then
         echo -e "$R Please run this script with root privilages. $N" &>>$LOG_FILE
         exit 1 
-    else
-        echo "Used id is: $USERID"
+    # else
+    #     echo "Used id is: $USERID"
    fi
 }
 VALIDATE(){
