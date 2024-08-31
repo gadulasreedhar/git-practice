@@ -30,33 +30,13 @@ CHKROOT
 
 for package in $@
 do
-dnf list installed $package
-if [ $? -ne 0 ]
-then
-    echo "package is not installed going to install it.."
-    dnf install $package -y
-    VALIDATE $? "Installing $package"
-else
-    echo "$package already installed nothing to do"
+# dnf list installed $package
+# if [ $? -ne 0 ]
+# then
+#     echo "package is not installed going to install it.."
+#     dnf install $package -y
+#     VALIDATE $? "Installing $package"
+# else
+#     echo "$package already installed nothing to do"
+echo $package
 done
-# dnf list installed git
-
-# if [ $? -ne 0 ]
-# then 
-#     echo "GIT is not installed going to install it.."
-#     dnf install git -y
-#     VALIDATE $? "Installing GIT"
-# else
-#     echo "GIT already installed nothing to do"
-# fi
-
-# dnf list installed mysql
-
-# if [ $? -ne 0 ]
-# then 
-#     echo "MYSQL is not installed going to install it.."
-#     dnf install mysql -y
-#     VALIDATE $? "Installing MYSQL"
-# else
-#     echo "MYSQL already installed nothing to do"
-# fi
