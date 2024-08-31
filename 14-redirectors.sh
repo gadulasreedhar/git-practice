@@ -34,16 +34,3 @@ fi
 }s
 
 CHKROOT
-
-for package in $@
-do
-dnf list installed $package
-if [ $? -ne 0 ]
-then
-    echo "$package is not installed going to install it.." &>>$LOG_FILE
-    dnf install $package -y &>>$LOG_FILE
-    VALIDATE $? "Installing $package" &>>$LOG_FILE
-else
-    echo "$package already $Y installed nothing to  $N" &>>$LOG_FILE
-fi
-done
