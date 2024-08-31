@@ -31,18 +31,26 @@ else
     echo -e "$2 is ...  $G SUCCESS $N"
 fi
 }
-
+USAGE(){
+    echo -e "$R USAGE $N :: sudo sh 14-redirectors.sh package1 package2 ..."
+    exit 1
+}
 CHKROOT
+
+if [ $# -eq 0]
+then
+    USAGE
+fi
 
 for package in $@
 do
 dnf list installed $package
 if [ $? -ne 0 ]
 then
-    echo "$package is not installed going to install it.."
-    dnf install $package -y
+    echo "$package is not installed going to install it.." &>>$LOG_FILE
+    dnf install $package -y &>>$LOG_FILE
     VALIDATE $? "Installing $package"
 else
-    echo "$package already installed nothing to do"
+    echo -e "$package already $Y installed nothing to do $N" &>>$LOG_FILE
 fi
 done
