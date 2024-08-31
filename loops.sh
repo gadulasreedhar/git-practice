@@ -40,7 +40,7 @@ else
     echo "$package already installed nothing to do"
 done
 
-dnf list installed git
+# dnf list installed git
 
 # if [ $? -ne 0 ]
 # then 
